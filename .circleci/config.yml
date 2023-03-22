@@ -8,10 +8,17 @@ jobs:
       - image: "circleci/python:3.7.10"
     steps:
       - checkout
-      - run: sudo pip3 install -r requirements.txt
-      - run: python3 main.py
-    parallelism: 2
-    
+      - run:
+          name: Install dependencies364
+          command : sudo pip3 install -r requirements.txt && python3 main-test.py
+          docker:
+            - image: circleci/python:3.6.4
+      - run:
+          name: Install dependencies3710
+          command : sudo pip3 install -r requirements.txt && python3 main-test.py
+          docker:
+            - image: "circleci/python:3.7.10"
+
   test:
     working_directory: ~/circleci-python
     docker:
