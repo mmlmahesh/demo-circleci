@@ -8,7 +8,7 @@ jobs:
     steps:
      
       - checkout
-      - run: sudo pip install -r requirements.txt
+      - run: sudo pip3 install -r requirements.txt
       - run: python3 main.py
   test:
     working_directory: ~/circleci-python
@@ -16,7 +16,7 @@ jobs:
       - image: "circleci/python:3.6.4"
     steps:
       - checkout
-      - run: pip install -r requirements.txt
+      - run: sudo pip3 install -r requirements.txt
       - run: python3 main-test.py
 
 workflows:
