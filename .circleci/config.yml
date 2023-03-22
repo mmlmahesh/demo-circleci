@@ -5,14 +5,7 @@ jobs:
     working_directory: ~/circleci-python
     docker:
       - image: "circleci/python:3.6.4"
-    steps:
-      - checkout
-      - run: sudo pip3 install -r requirements.txt
-      - run: python3 main.py
-  
-    working_directory: ~/circleci-python
-    docker:
-      - image: "circleci/python:3.8.12"
+      - image: "circleci/python:3.7.10"
     steps:
       - checkout
       - run: sudo pip3 install -r requirements.txt
