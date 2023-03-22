@@ -10,6 +10,8 @@ jobs:
       - checkout
       - run: sudo pip3 install -r requirements.txt
       - run: python3 main.py
+    parallelism: 2
+    
   test:
     working_directory: ~/circleci-python
     docker:
